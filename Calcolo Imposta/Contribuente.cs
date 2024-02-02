@@ -115,26 +115,25 @@ namespace Calcolo_Imposta
             }
         }
         
-        public bool CheckReddito(string RedAnn) // metodo pewr calcolare il reddito
+        public bool CheckReddito(string RedAnn) // metodo per calcolare il reddito (da controllare incongruenze)
         {
             string valori = "0123456789";
-            string Redt = RedditoAnnuale.ToString();
-            if (Redt != null && Redt != "")
+            if (RedAnn != null && RedAnn != "")
             {
-                for (int i = 0; i < Redt.Length; i++)
+                for (int i = 0; i < RedAnn.Length; i++)
                 {
-                    if (!Redt[i].ToString().Contains(valori))
+                    if (!RedAnn[i].ToString().Contains(valori))
                     {
                         //Console.WriteLine("Reddito non corretto, riprovare");
                         return false;
                     }
                 }
-                RedditoAnnuale = Convert.ToDouble(Redt);
+                RedditoAnnuale = Convert.ToDouble(RedAnn);
                 return true;
             }
             else
             {
-                Console.WriteLine("Reddito non correttooooooooooo, riprovare");
+                //Console.WriteLine("Reddito non corretto, riprovare");
                 return false;
             }
 
